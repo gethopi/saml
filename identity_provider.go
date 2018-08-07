@@ -228,6 +228,7 @@ func (idp *IdentityProvider) ServeIDPInitiated(w http.ResponseWriter, r *http.Re
 		IDP:         idp,
 		HTTPRequest: r,
 		RelayState:  relayState,
+		Now:         time.Now(),
 	}
 
 	session := idp.SessionProvider.GetSession(w, r, req)
